@@ -132,4 +132,4 @@ client.on('interactionCreate', async interaction => {
     await interaction.reply({ embeds: [embed], ephemeral: true });
 });
 
-client.login('DEIN_TOKEN_HIER');   // ← Hier deinen Bot Token einfügen
+client.login('MTQ5NTc2MTc5ODA5ODQ1NjcxNw.GBHDXY.n8RqZPQ2l0Wn_5iY1slclGt2oRR72V_JuENZ6c');   // ← Hier deinen Bot Token einfügen
