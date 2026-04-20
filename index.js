@@ -22,11 +22,12 @@ const PRICE_PER_SPAWNER = 3000000;   // 3M pro Spawner
 const PAY_TARGET = "ytdnmz";
 
 // Deine Channel IDs
-// Deine Channel IDs
-const SHOP_CHANNEL_ID = "1495762997875052554";     // ← Hier die Purchase Channel ID einfügen
-const FAKE_CHANNEL_ID = "1495764340299534467";     // ← Hier die Fake-Channel ID einfügen'
+const SHOP_CHANNEL_ID = "1495762997875052554";     // Purchase Channel
+const FAKE_CHANNEL_ID = "1495764340299534467";     // Fake-Customer Channel
 
-// Fake Käufe (mit Bild)
+// Rolle, die bei Fake-Käufen gepingt werden soll
+const FAKE_ROLE_ID = "1495854128340144139";
+
 let fakeInterval = null;
 
 client.once('ready', () => {
@@ -48,7 +49,7 @@ function startFakeBuys() {
                 name: "CheapSpawner", 
                 iconURL: "attachment://spawner.png" 
             })
-            .setDescription("**Someone just bought spawners!**\nBuyer: @Hidden")
+            .setDescription(`**Someone just bought spawners!**\nBuyer: <@&${FAKE_ROLE_ID}>`)
             .setTimestamp();
 
         await channel.send({ 
@@ -131,4 +132,4 @@ client.on('interactionCreate', async interaction => {
     await interaction.reply({ embeds: [embed], ephemeral: true });
 });
 
-client.login('MTQ5NTc2MTc5ODA5ODQ1NjcxNw.GBHDXY.n8RqZPQ2l0Wn_5iY1slclGt2oRR72V_JuENZ6c');   // ← Hier deinen Bot Token einfügen
+client.login('DEIN_TOKEN_HIER');   // ← Hier deinen Bot Token einfügen
